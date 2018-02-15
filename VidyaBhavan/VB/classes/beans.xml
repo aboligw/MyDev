@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="EUC-KR" ?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations" value="classpath:Property.properties"/>
+    </bean>
+    <bean name="dataSource" class="com.project.vb.common.DataSource">
+        <property name="driverClass" value="${jdbc.driverClassName}"/>
+        <property name="uri" value="${jdbc.driverUri}"/>
+        <property name="username" value="${jdbc.user}"/>
+        <property name="password" value="${jdbc.pass}"/>
+    </bean>
+    <bean name="attendanceDao" class="com.project.vb.service.AttendanceDao" lazy-init="true"></bean>
+    <bean name="attendanceFacade" class="com.project.vb.service.AttendanceFacade" lazy-init="true"></bean>
+    <bean name="attendanceBD" class="com.project.vb.presentation.AttendanceBD" lazy-init="true" scope="prototype"></bean>
+    <bean name="examDao" class="com.project.vb.service.ExamDao" lazy-init="true"></bean>
+    <bean name="examFacade" class="com.project.vb.service.ExamFacade" lazy-init="true"></bean>
+    <bean name="examBD" class="com.project.vb.presentation.ExamBD" lazy-init="true" scope="prototype"></bean>
+    <bean name="lectureDao" class="com.project.vb.service.LectureDao" lazy-init="true"></bean>
+    <bean name="lectureFacade" class="com.project.vb.service.LectureFacade" lazy-init="true"></bean>
+    <bean name="lectureBD" class="com.project.vb.presentation.LectureBD" lazy-init="true" scope="prototype"></bean>
+    <bean name="loginDao" class="com.project.vb.service.LoginDao" lazy-init="true"></bean>
+    <bean name="loginFacade" class="com.project.vb.service.LoginFacade" lazy-init="true"></bean>
+    <bean name="loginBD" class="com.project.vb.presentation.LoginBD" lazy-init="true" scope="prototype"></bean>
+    <bean name="marksDao" class="com.project.vb.service.MarksDao" lazy-init="true"></bean>
+    <bean name="marksFacade" class="com.project.vb.service.MarksFacade" lazy-init="true"></bean>
+    <bean name="marksBD" class="com.project.vb.presentation.MarksBD" lazy-init="true" scope="prototype"></bean>
+    <bean name="noticeDao" class="com.project.vb.service.NoticeDao" lazy-init="true"></bean>
+    <bean name="noticeFacade" class="com.project.vb.service.NoticeFacade" lazy-init="true"></bean>
+    <bean name="noticeBD" class="com.project.vb.presentation.NoticeBD" lazy-init="true" scope="prototype"></bean>
+    <bean name="studentDao" class="com.project.vb.service.StudentDao" lazy-init="true"></bean>
+    <bean name="studentFacade" class="com.project.vb.service.StudentFacade" lazy-init="true"></bean>
+    <bean name="studentBD" class="com.project.vb.presentation.StudentBD" lazy-init="true" scope="prototype"></bean>
+    <bean name="teacherDao" class="com.project.vb.service.TeacherDao" lazy-init="true"></bean>
+    <bean name="teacherFacade" class="com.project.vb.service.TeacherFacade" lazy-init="true"></bean>
+    <bean name="teacherBD" class="com.project.vb.presentation.TeacherBD" lazy-init="true" scope="prototype"></bean>
+    <bean name="teaSubDao" class="com.project.vb.service.TeaSubDao" lazy-init="true"></bean>
+    <bean name="teaSubFacade" class="com.project.vb.service.TeaSubFacade" lazy-init="true"></bean>
+    <bean name="teaSubBD" class="com.project.vb.presentation.TeaSubBD" lazy-init="true" scope="prototype"></bean>
+</beans>
