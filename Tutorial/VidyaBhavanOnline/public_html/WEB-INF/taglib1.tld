@@ -1,0 +1,23 @@
+<?xml version = '1.0' encoding = 'EUC-KR'?>
+<taglib xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+        version="2.1" xmlns="http://java.sun.com/xml/ns/javaee">
+    <display-name>mytaglib</display-name>
+    <tlib-version>1.0</tlib-version>
+    <short-name>taglib1</short-name>
+    <uri>/webapp/taglib1</uri>
+    <tag>
+        <name>DisplayUser</name>
+        <tag-class>com.project.vidyabhavan.online.presentation.Common.JavaClasses.MyCustomTag</tag-class>
+        <body-content>EMPTY</body-content>
+    </tag>
+    <tag>
+        <name>GenericDisplayTag</name>
+        <tag-class>com.project.vidyabhavan.online.presentation.Common.JavaClasses.GenericDisplayTag</tag-class>
+        <body-content>EMPTY</body-content>
+        <attribute>
+            <name>list</name>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+</taglib>

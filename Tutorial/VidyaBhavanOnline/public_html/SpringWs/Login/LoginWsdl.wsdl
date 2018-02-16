@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wsdl:definitions targetNamespace="http://localhost:7000/VidyaBhavan/SpringWs/LoginWsdl"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:tns="http://localhost:7000/VidyaBhavan/SpringWs/LoginWsdl"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+                  xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:sch="http://localhost:7000/VidyaBhavan/login">
+    <wsdl:types>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://localhost:7000/VidyaBhavan/login"
+                        schemaLocation="../../WEB-INF/xsd/Common.xsd"/>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="loginUserRequest">
+        <wsdl:part element="sch:loginUserRequest" name="loginUserRequest"/>
+    </wsdl:message>
+    <wsdl:message name="loginUserResponse">
+        <wsdl:part element="sch:loginUserResponse" name="loginUserResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="Authenticate">
+        <wsdl:operation name="authenticateUser">
+            <wsdl:input message="tns:loginUserRequest" name="loginUserRequest"/>
+            <wsdl:output message="tns:loginUserResponse" name="loginUserResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="LoginBinding" type="tns:Authenticate">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="authenticateUser">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="loginUserRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="loginUserResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="LoginServiceService">
+        <wsdl:port binding="tns:LoginBinding" name="LoginBinding">
+            <soap:address location="http://localhost:7000/VidyaBhavan/SpringWs/LoginService"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

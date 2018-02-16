@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="EUC-KR" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:common="http://localhost:7000/VidyaBhavan/login"
+           xmlns:tns="http://localhost:7000/VidyaBhavan/Teacher"
+           targetNamespace="http://localhost:7000/VidyaBhavan/Teacher" elementFormDefault="unqualified">
+    <xs:import namespace="http://localhost:7000/VidyaBhavan/login" schemaLocation="Common.xsd"/>
+    <xs:element name="studInfoRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="login" type="common:login"/>
+                <xs:element name="student" type="common:student"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="studInfoResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="studOut" type="common:student" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="insertNoticeRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="login" type="common:login"/>
+                <xs:element name="notice" type="common:notice"/>
+                <xs:element name="student" type="common:student"/>
+                <xs:element name="criteria" type="xs:int"/>
+                <xs:element name="classNo" type="xs:int"/>
+                <xs:element name="dateStr" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="insertNoticeResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="message" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="insertExamRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="login" type="common:login"/>
+                <xs:element name="exam" type="common:notice"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="insertExamResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="message" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="insertLectureRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="login" type="common:login"/>
+                <xs:element name="lecture" type="common:lecture"/>
+                <xs:element name="dateStr" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="insertLectureResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="message" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

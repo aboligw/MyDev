@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:ns0="http://webservicedemo.tutorial.project.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://webservicedemo.tutorial.project.com/">
+  <xsd:complexType name="addCntry">
+    <xsd:sequence>
+      <xsd:element name="arg0" type="ns0:country" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="addCntryResponse">
+    <xsd:sequence>
+      <xsd:element name="return" type="xsd:boolean"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="getList"/>
+  <xsd:complexType name="getListResponse">
+    <xsd:sequence>
+      <xsd:element name="return" type="ns0:country" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="country">
+    <xsd:sequence>
+      <xsd:element name="id" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="name" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="addCntry" type="ns0:addCntry"/>
+  <xsd:element name="addCntryResponse" type="ns0:addCntryResponse"/>
+  <xsd:element name="getList" type="ns0:getList"/>
+  <xsd:element name="getListResponse" type="ns0:getListResponse"/>
+</xsd:schema>

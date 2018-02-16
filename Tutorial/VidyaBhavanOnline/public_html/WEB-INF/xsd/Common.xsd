@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="EUC-KR" ?>
+<xs:schema targetNamespace="http://localhost:7000/VidyaBhavan/login" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://localhost:7000/VidyaBhavan/login" version="1.0">
+    <xs:element name="loginUserRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="userName" type="xs:string"/>
+                <xs:element name="password" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="loginUserResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="message" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="student">
+        <xs:sequence>
+            <xs:element name="userId" type="xs:string"/>
+            <xs:element name="id" type="xs:integer"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="classId" type="xs:integer"/>
+            <xs:element name="contact" type="xs:int"/>
+            <xs:element name="address" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="login">
+        <xs:sequence>
+            <xs:element name="userId" type="xs:string"/>
+            <xs:element name="pwd" type="xs:string"/>
+            <xs:sequence/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="teacher">
+        <xs:sequence>
+            <xs:element name="userId" type="xs:string"/>
+            <xs:element name="id" type="xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="notice">
+        <xs:sequence>
+            <xs:element name="data" type="xs:string"/>
+            <xs:element name="noteDate" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="exam">
+        <xs:sequence>
+            <xs:element name="totMks" type="xs:integer"/>
+            <xs:element name="classId" type="xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="lecture">
+        <xs:sequence>
+            <xs:element name="classId" type="xs:integer"/>
+            <xs:element name="duration" type="xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+

@@ -1,0 +1,6 @@
+2,Andy,Computer,Seoul
+3,Terry,Computer,Seoul
+4,Shlok,Computer,Seoul
+5,Elle,IT,Seoul
+6,Ruri,KG,Seoul
+7,Jayhee,Ele,Seoul
